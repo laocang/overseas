@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+    <meta name="viewport" content="width=device-width,intial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="/css/weui/weui.min.css">
+    <link rel="stylesheet" href="/css/weui/jquery-weui.min.css">
+
+    <script src="/js/weui/jquery-2.1.4.js"></script>
+    <script src="/js/weui/jquery-weui.min.js"></script>
+
+</head>
+<body>
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">登陆名</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="username" type="text" placeholder="请输入登陆名">
+        </div>
+
+    </div>
+    <div class="weui-cell">
+
+        <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="passwd" type="password" placeholder="请输入密码">
+        </div>
+    </div>
+
+
+</div>
+<a href="javascript:;" onclick="login()" style="width:96%;margin-top: 8px;" class="weui-btn weui-btn_primary">登陆</a>
+</body>
+<script>
+    function login(){
+        var username = $("#username").val();
+        var passwd = $("#passwd").val();
+        if(username==null||username==''){
+            alert("登陆名不能为空!");
+            return;
+        }
+        if(passwd==null||passwd==''){
+            alert("密码不能为空!");
+            return;
+        }
+        $.ajax({url: "/login/logon",
+            type: 'POST',
+            //  traditional: true
+            data:{
+                userName:username,
+                passWd:passwd
+            },
+            async : false,
+            dataType: 'json',
+            error: function() {
+                alert('导出错误！');
+            },
+            cache:false,
+            success: function(data) {
+                //location.href = '${request.getContextPath()}' + data.downloadPath;
+            }
+        });
+    }
+
+</script>
+</html>
