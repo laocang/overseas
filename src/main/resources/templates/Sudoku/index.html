@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,intial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="/css/weui/weui.min.css">
+    <link rel="stylesheet" href="/css/weui/jquery-weui.min.css">
+
+    <script src="/js/weui/jquery-2.1.4.js"></script>
+    <script src="/js/weui/jquery-weui.min.js"></script>
+</head>
+<body>
+<div class="weui-grids">
+    <a href="" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <img src="/images/icon_nav_msg.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            新增订单
+        </p>
+    </a>
+    <a href="" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <img src="/images/icon_nav_cell.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+          管理订单
+        </p>
+    </a>
+    <a href="${userId}" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <img src="/images/icon_nav_cell.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            待开发
+        </p>
+    </a>
+</div>
+</body>
+</html>

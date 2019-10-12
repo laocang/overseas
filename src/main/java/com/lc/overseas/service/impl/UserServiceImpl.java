@@ -2,7 +2,9 @@ package com.lc.overseas.service.impl;
 
 
 import com.lc.overseas.dao.usersMapper;
+import com.lc.overseas.pojo.users;
 import com.lc.overseas.service.IUserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,16 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List findAllUser(){
         return  userDao.findAllUser();
+    }
+
+    @Override
+    public users selectByPrimaryKey(int id) {
+        return userDao.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public users findUserByLogonIdAndPassWd(String logonId, String passWd) {
+        return userDao.findUserByLogonIdAndPassWd(logonId,passWd);
     }
 
 }

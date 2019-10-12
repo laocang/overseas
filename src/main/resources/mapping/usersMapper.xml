@@ -137,7 +137,11 @@
   </update>
 
 
-  <select id="findAllUser" resultType="com.lc.overseas.pojo.users">
+  <select id="findAllUser"  resultType="com.lc.overseas.pojo.users">
     select * from users
   </select>
+
+    <select id="findUserByLogonIdAndPassWd" parameterType="String" resultType="com.lc.overseas.pojo.users">
+        select * from users where logonid = #{logonId} and passwd = #{passWd}
+    </select>
 </mapper>

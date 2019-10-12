@@ -54,10 +54,15 @@
             async : false,
             dataType: 'json',
             error: function() {
-                alert('导出错误！');
+                alert('登录失败！');
             },
             cache:false,
             success: function(data) {
+                if (data==null||data=='null'){
+                    alert("登录失败！");
+                }else{
+                    window.location.href = "/Sudoku/index?userId="+data.id;
+                }
                 //location.href = '${request.getContextPath()}' + data.downloadPath;
             }
         });

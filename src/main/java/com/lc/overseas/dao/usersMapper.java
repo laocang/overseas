@@ -1,6 +1,7 @@
 package com.lc.overseas.dao;
 
 import com.lc.overseas.pojo.users;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -54,4 +55,7 @@ public interface usersMapper {
     int updateByPrimaryKey(users record);
 
     List<users> findAllUser();
+
+    users findUserByLogonIdAndPassWd(@Param("logonId") String logonId,@Param("passWd") String passWd);
+    
 }
